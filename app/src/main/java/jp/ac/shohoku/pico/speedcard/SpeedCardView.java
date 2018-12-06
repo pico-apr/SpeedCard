@@ -49,6 +49,7 @@ public class SpeedCardView extends SurfaceView implements Runnable, Callback {
 
     private SurfaceHolder mHolder;
     private int mGameState; // ゲームの状態を表す変数
+    private long mLvStart, mLvTime; // レベルの開始と時間
 
     /**
      * コンストラクタ<br />
@@ -66,6 +67,7 @@ public class SpeedCardView extends SurfaceView implements Runnable, Callback {
      * 各種変数の初期化やコールバックの割り当てなどを行う
      */
     private void init() {
+        mLvStart = System.currentTimeMillis();
         mHolder = getHolder(); // SurfaceHolderを取得する．
         mHolder.addCallback(this);
         setFocusable(true); // フォーカスをあてることを可能にするメソッド
