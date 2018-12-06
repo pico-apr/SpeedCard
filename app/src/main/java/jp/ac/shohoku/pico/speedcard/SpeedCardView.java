@@ -67,7 +67,7 @@ public class SpeedCardView extends SurfaceView implements Runnable, Callback {
      * 各種変数の初期化やコールバックの割り当てなどを行う
      */
     private void init() {
-        mLvStart= System.currentTimeMillis();
+        mLvStart = System.currentTimeMillis();
         mHolder = getHolder(); // SurfaceHolderを取得する．
         mHolder.addCallback(this);
         setFocusable(true); // フォーカスをあてることを可能にするメソッド
@@ -123,21 +123,18 @@ public class SpeedCardView extends SurfaceView implements Runnable, Callback {
                         break;
                     case LV1_PLAY:
                         mGameState = LV2_DISP;
-                        mLvStart= System.currentTimeMillis();
                         break;
                     case LV2_DISP:
                         mGameState = LV2_PLAY;
                         break;
                     case LV2_PLAY:
                         mGameState = LV3_DISP;
-                        mLvStart= System.currentTimeMillis();
                         break;
                     case LV3_DISP:
                         mGameState = LV3_PLAY;
                         break;
                     case LV3_PLAY:
                         mGameState = LV4_DISP;
-                        mLvStart= System.currentTimeMillis();
                         break;
                     case LV4_DISP:
                         mGameState = LV4_PLAY;
@@ -172,54 +169,50 @@ public class SpeedCardView extends SurfaceView implements Runnable, Callback {
 //LV1_DISPの時の描画処理
                 String msg = "LEVEL1 DISP";
                 canvas.drawText(msg, 10, 50, paint);
-                countDown(canvas);
                 break;
             case LV1_PLAY:
 //LV1_PLAYの時の描画処理
-                msg = "LEVEL1 PLAY";
+                String msg = "LEVEL1 PLAY";
                 canvas.drawText(msg, 10, 50, paint);
                 break;
             case LV2_DISP:
 //LV2_DISPの時の描画処理
-                msg = "LEVEL2 DISP";
+                String msg = "LEVEL2 DISP";
                 canvas.drawText(msg, 10, 50, paint);
-                countDown(canvas);
                 break;
             case LV2_PLAY:
 //LV2_PLAYの時の描画処理
-                msg = "LEVEL2 PLAY";
+                String msg = "LEVEL2 PLAY";
                 canvas.drawText(msg, 10, 50, paint);
                 break;
             case LV3_DISP:
 //LV3_DISP時の描画処理
-                msg = "LEVEL3 DISP";
+                String msg = "LEVEL3 DISP";
                 canvas.drawText(msg, 10, 50, paint);
                 break;
             case LV3_PLAY:
 //LV3_PLAYの時の描画処理
-                msg = "LEVEL3 PLAY";
+                String msg = "LEVEL3 PLAY";
                 canvas.drawText(msg, 10, 50, paint);
-                countDown(canvas);
                 break;
             case LV4_DISP:
 //LV4_DISPの時の描画処理
-                msg = "LEVEL4 DISP";
+                String msg = "LEVEL4 DISP";
                 canvas.drawText(msg, 10, 50, paint);
-                countDown(canvas);
                 break;
             case LV4_PLAY:
 //LV4_PLAYの時の描画処理
-                msg= "LEVEL4 PLAY";
+                String msg= "LEVEL4 PLAY";
                 canvas.drawText(msg, 10, 50, paint);
                 break;
             case GAME_OVER:
 //GAME_OVER時の描画処理
-                msg = "GAME OVER";
+                String msg = "GAME OVER";
                 canvas.drawText(msg, 10, 50, paint);
                 break;
             case GAME_CLEAR:
 //GAME_CLEARの時の描画処理
-                msg = "GAME CLEAR";
+                String msg = "GAME CLEAR";
                 canvas.drawText(msg, 10, 50, paint);
                 break;
         }
@@ -234,15 +227,5 @@ public class SpeedCardView extends SurfaceView implements Runnable, Callback {
     public void run() {
         draw();
     }
-
-    public void countDown(Canvas canvas){
-        Paint paint= new Paint();
-        paint.setTextSize(100);
-        canvas.drawText(""+((3000-mLvTime)/1000+1), 190, 527, paint);  //画面の中心付近に
-    }
-
-    }
-
-
 
 }
