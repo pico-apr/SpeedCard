@@ -239,7 +239,7 @@ public class SpeedCardView extends SurfaceView implements Runnable, Callback {
         draw();
         mLvTime = System.currentTimeMillis() -mLvStart;
 
-        if(mLvTime >= 3000) {
+        if(mLvTime >= 3000) { //３秒経過したら状態を変更する
             switch(mGameState) {
                 case LV1_DISP:
                     mGameState = LV1_PLAY;
