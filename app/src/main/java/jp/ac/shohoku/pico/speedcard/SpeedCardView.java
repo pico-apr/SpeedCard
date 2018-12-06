@@ -49,6 +49,7 @@ public class SpeedCardView extends SurfaceView implements Runnable, Callback {
 
     private SurfaceHolder mHolder;
     private int mGameState; // ゲームの状態を表す変数
+    private long mLvStart, mLvTime; // レベルの開始と時間
 
     /**
      * コンストラクタ<br />
