@@ -66,6 +66,7 @@ public class SpeedCardView extends SurfaceView implements Runnable, Callback {
      * 各種変数の初期化やコールバックの割り当てなどを行う
      */
     private void init() {
+        mLvStart = System.currentTimeMillis();
         mHolder = getHolder(); // SurfaceHolderを取得する．
         mHolder.addCallback(this);
         setFocusable(true); // フォーカスをあてることを可能にするメソッド
